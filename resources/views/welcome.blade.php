@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -63,13 +64,22 @@
                             <div class="header-social social-links main-navigation-lang d-none d-lg-block">
                                 <ul>
                                     <li class=" language-list menu-item-has-children">
-                                        <a href="index.html">Eng</a>
+                                        <a href="">@lang('public.lang')</a>
                                         <ul>
                                             <li>
-                                                <a href="index-v2.html"> Rus</a>
+                                                @if (app()->getLocale() != 'ru')
+                                                    <a href="{{ route('lang.switch', 'ru') }}"> RUS</a>
+                                                @endif
                                             </li>
                                             <li>
-                                                <a href="index-v2.html"> Uzb</a>
+                                                @if (app()->getLocale() != 'uz')
+                                                    <a href="{{ route('lang.switch', 'uz') }}"> UZB</a>
+                                                @endif
+                                            </li>
+                                            <li>
+                                                @if (app()->getLocale() != 'en')
+                                                    <a href="{{ route('lang.switch', 'en') }}"> ENG</a>
+                                                @endif
                                             </li>
                                         </ul>
                                     </li>
@@ -78,11 +88,11 @@
                                     <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <div class="header-search-icon">
+                            {{-- <div class="header-search-icon">
                                 <button class="search-icon">
                                     <i class="fas fa-search"></i>
                                 </button>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -128,90 +138,13 @@
                                 </li>
                                 <li>
                                     <a href="#">Pages</a>
-                                    <ul>
-                                        <li>
-                                            <a href="about.html">About</a>
-                                        </li>
-                                        <li>
-                                            <a href="service.html">Service</a>
-                                        </li>
-                                        <li>
-                                            <a href="career.html">Career</a>
-                                        </li>
-                                        <li>
-                                            <a href="career-detail.html">Career Detail</a>
-                                        </li>
-                                        <li>
-                                            <a href="tour-guide.html">Tour Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery.html">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-page.html">Single Page</a>
-                                        </li>
-                                        <li>
-                                            <a href="faq.html">FAQ Page</a>
-                                        </li>
                                 </li>
-                            </ul>
-                            </li>
-                            <li>
-                                <a href="single-page.html">Shop</a>
-                                <ul>
-                                    <li>
-                                        <a href="product-right.html">Shop Archive</a>
-                                    </li>
-                                    <li>
-                                        <a href="product-detail.html">Shop Single</a>
-                                    </li>
-                                    <li>
-                                        <a href="product-cart.html">Shop Cart</a>
-                                    </li>
-                                    <li>
-                                        <a href="product-checkout.html">Shop Checkout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li> <!-- Dashbord menu-->
-                                <a href="#">Dashboard</a>
-                                <ul>
-                                    <li>
-                                        <a href="admin/dashboard.html">Dashboard</a>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">User</a>
-                                        <ul>
-                                            <li>
-                                                <a href="admin/user.html">User List</a>
-                                            </li>
-                                            <li>
-                                                <a href="admin/user-edit.html">User Edit</a>
-                                            </li>
-                                            <li>
-                                                <a href="admin/new-user.html">New User</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="admin/db-booking.html">Booking</a>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="admin/db-package.html">Package</a>
-                                        <ul>
-                                            <li>
-                                                <a href="admin/db-package-active.html">Package Active</a>
-                                            </li>
-                                            <li>
-                                                <a href="admin/db-package-pending.html">Package Pending</a>
-                                            </li>
-                                            <li>
-                                                <a href="admin/db-package-expired.html">Package Expired</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
+                                <li>
+                                    <a href="single-page.html">Shop</a>
+                                </li>
+                                <li> <!-- Dashbord menu-->
+                                    <a href="#">Dashboard</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -227,8 +160,7 @@
             <section class="home-slider-section">
                 <div class="home-slider">
                     <div class="home-banner-items">
-                        <div class="banner-inner-wrap"
-                            style="background-image: url(assets/images/hero1.jpg);"></div>
+                        <div class="banner-inner-wrap" style="background-image: url(assets/images/hero1.jpg);"></div>
                         <div class="banner-content-wrap">
                             <div class="container">
                                 <div class="banner-content text-center">
@@ -243,8 +175,7 @@
                         <div class="overlay"></div>
                     </div>
                     <div class="home-banner-items">
-                        <div class="banner-inner-wrap"
-                            style="background-image: url(assets/images/hero2.jpg);"></div>
+                        <div class="banner-inner-wrap" style="background-image: url(assets/images/hero2.jpg);"></div>
                         <div class="banner-content-wrap">
                             <div class="container">
                                 <div class="banner-content text-center">
