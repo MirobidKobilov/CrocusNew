@@ -102,8 +102,8 @@
                     <div class="site-identity">
                         <h1 class="site-title">
                             <a href="index.html">
-                                <img class="white-logo" src="assets/images/logo.svg" alt="logo">
-                                <img class="black-logo" src="assets/images/logo.svg" alt="logo">
+                                <img class="white-logo" src="assets/images/logo.svg" alt="logo" style="height: 100px">
+                                <img class="black-logo" src="assets/images/logo.svg" alt="logo" style="height: 100px">
                             </a>
                         </h1>
                     </div>
@@ -1253,7 +1253,7 @@
                         </div>
                         <div class="col-md-2 text-center">
                             <div class="footer-logo">
-                                <a href="#"><img src="assets/images/logo.svg" alt=""></a>
+                                <a href="#"><img src="assets/images/logo.svg" alt="" style="height: 100px"></a>
                             </div>
                         </div>
                         <div class="col-md-5">
