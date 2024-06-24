@@ -111,7 +111,7 @@
                         <nav id="navigation" class="navigation">
                             <ul>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Tour</a>
+                                    <a href="#">@lang('public.company')</a>
                                     <ul>
                                         <li>
                                             <a href="destination.html">Destination</a>
