@@ -18,5 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('lang/{locale}', [LocalizationController::class, 'setLang'])->name('lang.switch');
+// Route::get('lang/{locale}', [LocalizationController::class, 'setLang'])->name('lang.switch');
+
+Route::get('/{locale?}', function ($locale = null) {
+    if (isset($locale) && in_array($locale, ['uz', 'ru', 'eng'])) {
+        app()->setLocale($locale);
+    }
+
+    return view('welcome');
+})->name('lang.switch');
 
