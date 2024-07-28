@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" media="all">
     <!-- Fonts Awesome CSS -->
@@ -114,7 +114,7 @@
                                     <a href="#">@lang('public.company')</a>
                                     <ul>
                                         <li>
-                                            <a href="destination.html">Destination</a>
+                                            <a href="destination.html">@lang('public.partners')</a>
                                         </li>
                                         <li>
                                             <a href="tour-packages.html">Tour Packages</a>
@@ -137,7 +137,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Pages</a>
+                                    <a href="#">@lang('public.partners')</a>
                                 </li>
                                 <li>
                                     <a href="single-page.html">Shop</a>
