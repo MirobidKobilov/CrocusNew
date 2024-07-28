@@ -1,8 +1,47 @@
----
----
 deployment:
+  tasks:
+    - export DEPLOYPATH=/home/crocust1/public_html
+    - export REPOPATH=/home/crocust1/repositories/CrocusNew
 
-   tasks:
+    # Step 1: Clone the repository
+    - echo "Cloning repository..."
+    - git clone $REPOPATH $DEPLOYPATH
 
-      - export DEPLOYPATH=/home/example/public_html/
-      - /bin/cp -R * $DEPLOYPATH
+    # Step 2: Install Composer dependencies
+    - echo "Installing Composer dependencies..."
+    - /opt/cpanel/composer/bin/composer install --no-dev --optimize-autoloader --working-dir=$DEPLOYPATH
+
+    # Step 3: Set file permissions
+    - echo "Setting file permissions..."
+    - find $DEPLOYPATH -type f -exec chmod 644 {} \;
+    - find $DEPLOYPATH -type d -exec chmod 755 {} \;
+    - chown -R crocust1:crocust1 $DEPLOYPATH
+
+    # Step 4: Create storage symlink
+    - echo "Creating storage symlink..."
+    - cd $DEPLOYPATH
+    - php artisan storage:link
+
+    # Step 5: Clear and cache configuration
+    - echo "Clearing and caching configuration..."
+    - php artisan config:clear
+    - php artisan config:cache
+
+    # Step 6: Clear and cache routes
+    - echo "Clearing and caching routes..."
+    - php artisan route:clear
+    - php artisan route:cache
+
+    # Step 7: Clear and cache views
+    - echo "Clearing and caching views..."
+    - php artisan view:clear
+    - php artisan view:cache
+
+    # Step 8: Create .env file (optional, if not included in the repo)
+    - echo "Creating .env file..."
+    - if [ ! -f $DEPLOYPATH/.env ]; then cp $DEPLOYPATH/.env.example $DEPLOYPATH/.env; fi
+
+    # Step 9: Set public_html symlink to Laravel's public directory
+    - echo "Creating public_html symlink..."
+    - rm -rf /home/crocust1/public_html
+    - ln -s $DEPLOYPATH/public /home/crocust1/public_html
