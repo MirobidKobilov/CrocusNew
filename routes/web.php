@@ -21,7 +21,7 @@ Route::get('/', function () {
 // Route::get('lang/{locale}', [LocalizationController::class, 'setLang'])->name('lang.switch');
 
 Route::get('/{locale?}', function ($locale = null) {
-    if (isset($locale) && in_array($locale, ['uz', 'ru', 'eng'])) {
+    if (isset($locale) && in_array($locale, ['uz', 'ru', 'en'])) {
         app()->setLocale($locale);
     }
 
