@@ -8,7 +8,7 @@ deployment:
 
     - rm -rf $DEPLOYPATH/*
 
-    - cp -r $REPOPATH/* $DEPLOYPATH
+    - cp -R $REPOPATH/* $DEPLOYPATH
 
 
     - composer install --ignore-platform-req=ext-fileinfo
