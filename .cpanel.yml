@@ -1,8 +1,64 @@
 ---
----
 deployment:
+  tasks:
+    - export REPOPATH=/home/crocust1/repositories/CrocusNew
+    - export DEPLOYPATH=/home/crocust1/public_html
 
-   tasks:
+    - echo "Starting deployment..."
 
-      - export DEPLOYPATH=/home/crocust1/public_html/
-      - /bin/cp -R * $DEPLOYPATH
+    # Ensure the latest code is pulled from the Git repository
+    - echo "Pulling the latest code from the repository..."
+    - cd $REPOPATH
+    - /usr/local/cpanel/3rdparty/bin/git pull
+
+    # Remove old public_html files
+    - echo "Removing old public_html files..."
+    - rm -rf $DEPLOYPATH/*
+
+    # Copy new files to public_html
+    - echo "Copying new files to public_html..."
+    - cp -r $REPOPATH/* $DEPLOYPATH
+
+    # Change to the deployment directory
+    - cd $DEPLOYPATH
+
+    # Install composer dependencies
+    - echo "Installing composer dependencies..."
+    - /opt/cpanel/composer/bin/composer install --no-interaction --prefer-dist --optimize-autoloader
+
+    # Set the correct permissions for Laravel directories
+    - echo "Setting correct permissions for storage and cache directories..."
+    - find $DEPLOYPATH/storage -type d -exec chmod 775 {} \;
+    - find $DEPLOYPATH/storage -type f -exec chmod 664 {} \;
+    - find $DEPLOYPATH/bootstrap/cache -type d -exec chmod 775 {} \;
+    - find $DEPLOYPATH/bootstrap/cache -type f -exec chmod 664 {} \;
+
+    # Generate application key if not already set
+    - if [ ! -f $DEPLOYPATH/.env ]; then
+        echo "Creating .env file...";
+        cp $DEPLOYPATH/.env.example $DEPLOYPATH/.env;
+        echo "Generating application key...";
+        php artisan key:generate;
+      fi
+
+    # Run database migrations
+    - echo "Running database migrations..."
+    - php artisan migrate --force
+
+    # Clear and cache config
+    - echo "Clearing and caching config..."
+    - php artisan config:cache
+
+    # Clear and cache routes
+    - echo "Clearing and caching routes..."
+    - php artisan route:cache
+
+    # Clear and cache views
+    - echo "Clearing and caching views..."
+    - php artisan view:cache
+
+    # Clear application cache
+    - echo "Clearing application cache..."
+    - php artisan cache:clear
+
+    - echo "Deployment complete."
