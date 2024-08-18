@@ -148,9 +148,9 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="header-btn">
+                    {{-- <div class="header-btn">
                         <a href="#" class="button-primary">BOOK NOW</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="mobile-menu-container"></div>
@@ -168,7 +168,7 @@
                                     <p>Taciti quasi, sagittis excepteur hymenaeos, id temporibus hic proident ullam,
                                         eaque donec delectus tempor consectetur nunc, purus congue? Rem volutpat
                                         sodales! Mollit. Minus exercitationem wisi.</p>
-                                    <a href="#" class="button-primary">CONTINUE READING</a>
+                                    {{-- <a href="#" class="button-primary">CONTINUE READING</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
                                     <p>Taciti quasi, sagittis excepteur hymenaeos, id temporibus hic proident ullam,
                                         eaque donec delectus tempor consectetur nunc, purus congue? Rem volutpat
                                         sodales! Mollit. Minus exercitationem wisi.</p>
-                                    <a href="#" class="button-primary">CONTINUE READING</a>
+                                    {{-- <a href="#" class="button-primary">CONTINUE READING</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@
             </section>
             <!-- slider html start -->
             <!-- Home search field html start -->
-            <div class="trip-search-section shape-search-section">
+            {{-- <div class="trip-search-section shape-search-section">
                 <div class="slider-shape"></div>
                 <div class="container">
                     <div class="trip-search-inner white-bg d-flex">
@@ -223,7 +223,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- search search field html end -->
             <section class="destination-section">
                 <div class="container">
