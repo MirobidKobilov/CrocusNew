@@ -204,6 +204,12 @@ progress {
 textarea {
   overflow: auto;
 }
+.language-list.menu-item-has-children  {
+  text-align: center;
+}
+.language-list.menu-item-has-children > ul > li {
+  margin: 0;
+}
 
 [type="checkbox"],
 [type="radio"] {

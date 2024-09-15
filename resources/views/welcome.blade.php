@@ -63,8 +63,7 @@
                         <div class="col-lg-4 d-flex justify-content-lg-end justify-content-between">
                             <div class="header-social social-links main-navigation-lang d-none d-lg-block">
                                 <ul>
-                                    <li class=" language-list menu-item-has-children">
-                                        <a href="">@lang('public.lang')</a>
+                                    <li class="language-list menu-item-has-children">
                                         <ul>
                                             <li>
                                                 @if (app()->getLocale() != 'ru')
@@ -82,6 +81,7 @@
                                                 @endif
                                             </li>
                                         </ul>
+                                        <a href="">@lang('public.lang')</a>
                                     </li>
                                     <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
                                     <li><a href="#"><i class="fab fa-telegram" aria-hidden="true"></i></a></li>
@@ -102,8 +102,10 @@
                     <div class="site-identity">
                         <h1 class="site-title">
                             <a href="index.html">
-                                <img class="white-logo" src="assets/images/logo.svg" alt="logo" style="height: 100px">
-                                <img class="black-logo" src="assets/images/logo.svg" alt="logo" style="height: 100px">
+                                <img class="white-logo" src="assets/images/logo.svg" alt="logo"
+                                    style="height: 100px">
+                                <img class="black-logo" src="assets/images/logo.svg" alt="logo"
+                                    style="height: 100px">
                             </a>
                         </h1>
                     </div>
@@ -225,7 +227,7 @@
                 </div>
             </div> --}}
             <!-- search search field html end -->
-            <section class="destination-section">
+            <section class="destination-section my-4">
                 <div class="container">
                     <div class="section-heading">
                         <div class="row align-items-end">
@@ -1253,7 +1255,8 @@
                         </div>
                         <div class="col-md-2 text-center">
                             <div class="footer-logo">
-                                <a href="#"><img src="assets/images/logo.svg" alt="" style="height: 100px"></a>
+                                <a href="#"><img src="assets/images/logo.svg" alt=""
+                                        style="height: 100px"></a>
                             </div>
                         </div>
                         <div class="col-md-5">
