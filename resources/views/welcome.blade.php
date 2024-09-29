@@ -39,124 +39,7 @@
         </div>
     </div>
     <div id="page" class="full-page">
-        <header id="masthead" class="site-header header-primary">
-            <!-- header html start -->
-            <div class="top-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 d-none d-lg-block">
-                            <div class="header-contact-info">
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fas fa-phone-alt"></i> +01 (977) 2599 12</a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:info@Travel.com"><i class="fas fa-envelope"></i>
-                                            company@domain.com</a>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-map-marker-alt"></i> 3146 Koontz Lane, California
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 d-flex justify-content-lg-end justify-content-between">
-                            <div class="header-social social-links main-navigation-lang d-none d-lg-block">
-                                <ul>
-                                    <li class="language-list menu-item-has-children">
-                                        <ul>
-                                            <li>
-                                                @if (app()->getLocale() != 'ru')
-                                                    <a href="{{ route('lang.switch', 'ru') }}"> RUS</a>
-                                                @endif
-                                            </li>
-                                            <li>
-                                                @if (app()->getLocale() != 'uz')
-                                                    <a href="{{ route('lang.switch', 'uz') }}"> UZB</a>
-                                                @endif
-                                            </li>
-                                            <li>
-                                                @if (app()->getLocale() != 'en')
-                                                    <a href="{{ route('lang.switch', 'en') }}"> ENG</a>
-                                                @endif
-                                            </li>
-                                        </ul>
-                                        <a href="">@lang('public.lang')</a>
-                                    </li>
-                                    <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-telegram" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            {{-- <div class="header-search-icon">
-                                <button class="search-icon">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-header">
-                <div class="container d-flex justify-content-between align-items-center">
-                    <div class="site-identity">
-                        <h1 class="site-title">
-                            <a href="index.html">
-                                <img class="white-logo" src="assets/images/logo.svg" alt="logo"
-                                    style="height: 100px">
-                                <img class="black-logo" src="assets/images/logo.svg" alt="logo"
-                                    style="height: 100px">
-                            </a>
-                        </h1>
-                    </div>
-                    <div class="main-navigation d-none d-lg-block">
-                        <nav id="navigation" class="navigation">
-                            <ul>
-                                <li class="menu-item-has-children">
-                                    <a href="#">@lang('public.company')</a>
-                                    <ul>
-                                        <li>
-                                            <a href="destination.html">@lang('public.partners')</a>
-                                        </li>
-                                        <li>
-                                            <a href="tour-packages.html">Tour Packages</a>
-                                        </li>
-                                        <li>
-                                            <a href="package-offer.html">Package Offer</a>
-                                        </li>
-                                        <li>
-                                            <a href="package-detail.html">Package Detail</a>
-                                        </li>
-                                        <li>
-                                            <a href="tour-cart.html">Tour Cart</a>
-                                        </li>
-                                        <li>
-                                            <a href="booking.html">Package Booking</a>
-                                        </li>
-                                        <li>
-                                            <a href="confirmation.html">Confirmation</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">@lang('public.partners')</a>
-                                </li>
-                                <li>
-                                    <a href="single-page.html">Shop</a>
-                                </li>
-                                <li> <!-- Dashbord menu-->
-                                    <a href="#">Dashboard</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    {{-- <div class="header-btn">
-                        <a href="#" class="button-primary">BOOK NOW</a>
-                    </div> --}}
-                </div>
-            </div>
-            <div class="mobile-menu-container"></div>
-        </header>
+        @include('layouts.header')
         <main id="content" class="site-main">
             <!-- Home slider html start -->
             <section class="home-slider-section">
@@ -250,14 +133,15 @@
                                     <div class="col-sm-6">
                                         <div class="desti-item overlay-desti-item">
                                             <figure class="desti-image">
-                                                <img src="assets/images/img1.jpg" alt="">
+                                                <img style="height: 533px" src="/countries/dubai.jpeg"
+                                                    alt="">
                                             </figure>
                                             <div class="meta-cat bg-meta-cat">
-                                                <a href="#">THAILAND</a>
+                                                <a href="#">DUBAI</a>
                                             </div>
                                             <div class="desti-content">
                                                 <h3>
-                                                    <a href="#">Disney Land</a>
+                                                    <a href="#">BURJ AL ARAB</a>
                                                 </h3>
                                                 <div class="rating-start" title="Rated 5 out of 4">
                                                     <span style="width: 53%"></span>
@@ -268,10 +152,11 @@
                                     <div class="col-sm-6">
                                         <div class="desti-item overlay-desti-item">
                                             <figure class="desti-image">
-                                                <img src="assets/images/img2.jpg" alt="">
+                                                <img style="height: 533px" src="/countries/egypt.jpeg"
+                                                    alt="">
                                             </figure>
                                             <div class="meta-cat bg-meta-cat">
-                                                <a href="#">NORWAY</a>
+                                                <a href="#">egypt</a>
                                             </div>
                                             <div class="desti-content">
                                                 <h3>
@@ -290,10 +175,11 @@
                                     <div class="col-md-6 col-xl-12">
                                         <div class="desti-item overlay-desti-item">
                                             <figure class="desti-image">
-                                                <img src="assets/images/img3.jpg" alt="">
+                                                <img style="height: 250px; width: 100%;"
+                                                    src="/countries/indonesia.jpeg" alt="">
                                             </figure>
                                             <div class="meta-cat bg-meta-cat">
-                                                <a href="#">NEW ZEALAND</a>
+                                                <a href="#">INDONESIA</a>
                                             </div>
                                             <div class="desti-content">
                                                 <h3>
@@ -308,10 +194,11 @@
                                     <div class="col-md-6 col-xl-12">
                                         <div class="desti-item overlay-desti-item">
                                             <figure class="desti-image">
-                                                <img src="assets/images/img4.jpg" alt="">
+                                                <img style="height: 250px; width: 100%;" src="/countries/italy.jpeg"
+                                                    alt="">
                                             </figure>
                                             <div class="meta-cat bg-meta-cat">
-                                                <a href="#">SINGAPORE</a>
+                                                <a href="#">ITALY</a>
                                             </div>
                                             <div class="desti-content">
                                                 <h3>
@@ -390,7 +277,8 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam.
                                                 Ut elit tellus, luctus nec ullam elit tellpus.</p>
                                             <div class="btn-wrap">
-                                                <a href="#" class="button-text width-6">Book Now<i
+                                                <a href="{{ app()->getLocale() }}/book-now"
+                                                    class="button-text width-6">Book Now<i
                                                         class="fas fa-arrow-right"></i></a>
                                                 <a href="#" class="button-text width-6">Wish List<i
                                                         class="far fa-heart"></i></a>
@@ -441,7 +329,8 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam.
                                                 Ut elit tellus, luctus nec ullam elit tellpus.</p>
                                             <div class="btn-wrap">
-                                                <a href="#" class="button-text width-6">Book Now<i
+                                                <a href="{{ app()->getLocale() }}/book-now"
+                                                    class="button-text width-6">Book Now<i
                                                         class="fas fa-arrow-right"></i></a>
                                                 <a href="#" class="button-text width-6">Wish List<i
                                                         class="far fa-heart"></i></a>
@@ -492,7 +381,8 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam.
                                                 Ut elit tellus, luctus nec ullam elit tellpus.</p>
                                             <div class="btn-wrap">
-                                                <a href="#" class="button-text width-6">Book Now<i
+                                                <a href="{{ app()->getLocale() }}/book-now"
+                                                    class="button-text width-6">Book Now<i
                                                         class="fas fa-arrow-right"></i></a>
                                                 <a href="#" class="button-text width-6">Wish List<i
                                                         class="far fa-heart"></i></a>
@@ -1142,130 +1032,7 @@
             </section>
             <!--  contact details html end -->
         </main>
-        <footer id="colophon" class="site-footer footer-primary">
-            <div class="top-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                            <aside class="widget widget_text">
-                                <h3 class="widget-title">
-                                    About Travel
-                                </h3>
-                                <div class="textwidget widget-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                    ullamcorper mattis, pulvinar dapibus leo.
-                                </div>
-                                <div class="award-img">
-                                    <a href="#"><img src="assets/images/logo6.png" alt=""></a>
-                                    <a href="#"><img src="assets/images/logo2.png" alt=""></a>
-                                </div>
-                            </aside>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <aside class="widget widget_text">
-                                <h3 class="widget-title">CONTACT INFORMATION</h3>
-                                <div class="textwidget widget-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fas fa-phone-alt"></i>
-                                                +01 (977) 2599 12
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fas fa-envelope"></i>
-                                                company@domain.com
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            3146 Koontz, California
-                                        </li>
-                                    </ul>
-                                </div>
-                            </aside>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <aside class="widget widget_recent_post">
-                                <h3 class="widget-title">Latest Post</h3>
-                                <ul>
-                                    <li>
-                                        <h5>
-                                            <a href="#">Life is a beautiful journey not a destination</a>
-                                        </h5>
-                                        <div class="entry-meta">
-                                            <span class="post-on">
-                                                <a href="#">August 17, 2021</a>
-                                            </span>
-                                            <span class="comments-link">
-                                                <a href="#">No Comments</a>
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h5>
-                                            <a href="#">Take only memories, leave only footprints</a>
-                                        </h5>
-                                        <div class="entry-meta">
-                                            <span class="post-on">
-                                                <a href="#">August 17, 2021</a>
-                                            </span>
-                                            <span class="comments-link">
-                                                <a href="#">No Comments</a>
-                                            </span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </aside>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <aside class="widget widget_newslatter">
-                                <h3 class="widget-title">SUBSCRIBE US</h3>
-                                <div class="widget-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </div>
-                                <form class="newslatter-form">
-                                    <input type="email" name="s" placeholder="Your Email..">
-                                    <input type="submit" name="s" value="SUBSCRIBE NOW">
-                                </form>
-                            </aside>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="buttom-footer">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-5">
-                            <div class="footer-menu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Privacy Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Term & Condition</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">FAQ</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-center">
-                            <div class="footer-logo">
-                                <a href="#"><img src="assets/images/logo.svg" alt=""
-                                        style="height: 100px"></a>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="copy-right text-right">Copyright © 2021 Travele. All rights reserveds</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('layouts.footer')
         <a id="backTotop" href="#" class="to-top-icon">
             <i class="fas fa-chevron-up"></i>
         </a>

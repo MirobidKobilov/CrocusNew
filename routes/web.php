@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocalizationController;
+use GuzzleHttp\Psr7\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,6 @@ Route::get('/{locale?}', function ($locale = null) {
     return view('welcome');
 })->name('lang.switch');
 
+Route::get('/{locale?}/book-now', function ($locale = null) {
+   return view('book-now');
+});
