@@ -69,13 +69,21 @@
                             <!-- step one form html start -->
                             <div class="booking-form-wrap">
                                 <div class="booking-content mb-4">
-                                    <div class="form-title">
+                                    <div class="form-title mb-0">
                                         <h3>Your Details</h3>
                                     </div>
                                     <div class="row">
-                                        <div class="col-12 mb-4 text-center">
-                                           <i class="fas fa-plane"></i>
-                                           <span class="ms-2">Germany Berlin</span>
+                                        <div class="col-12 mb-2">
+                                            <div class="text-center mb-2">
+                                                Medhufushi Island Resort
+                                            </div>
+                                            <div class="w-100 d-flex align-items-center justify-content-center">
+                                                <i class="fas fa-star" style="color: gold"></i>
+                                                <i class="fas fa-star" style="color: gold"></i>
+                                                <i class="fas fa-star" style="color: gold"></i>
+                                                <i class="fas fa-star" style="color: gold"></i>
+                                                <i class="fas fa-star" style="color: gold"></i>
+                                            </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
