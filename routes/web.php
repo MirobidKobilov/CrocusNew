@@ -16,7 +16,39 @@ use GuzzleHttp\Psr7\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $popular_packages = [
+        [
+            "id" => 1,
+            "price_per_person" => 1900,
+            "location" => "Turkey",
+            "rating" => 5,
+            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
+            "title" => "Sunset view of beautiful lakeside resident",
+            "slug" => "sunset-view-of-beautiful-lakeside-resident",
+            "image" => "/assets/images/img5.jpg"
+        ],
+        [
+            "id" => 2,
+            "price_per_person" => 1230,
+            "location" => "Netherlands",
+            "rating" => 5,
+            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
+            "title" => "Experience the natural beauty of island",
+            "slug" => "experience-the-natural-beauty-of-island",
+            "image" => "/assets/images/img5.jpg"
+        ],
+        [
+            "id" => 3,
+            "price_per_person" => 2000,
+            "location" => "Portugal",
+            "rating" => 5,
+            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
+            "title" => "Vacation to the water city of Portugal",
+            "slug" => "vacation-to-the-water-city-of-portugal",
+            "image" => "/assets/images/img5.jpg"
+        ]
+    ];
+    return view('welcome', compact('popular_packages'));
 });
 
 // Route::get('lang/{locale}', [LocalizationController::class, 'setLang'])->name('lang.switch');
@@ -26,7 +58,40 @@ Route::get('/{locale?}', function ($locale = null) {
         app()->setLocale($locale);
     }
 
-    return view('welcome');
+    $popular_packages = [
+        [
+            "id" => 1,
+            "price_per_person" => 1900,
+            "location" => "Turkey",
+            "rating" => 5,
+            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
+            "title" => "Sunset view of beautiful lakeside resident",
+            "slug" => "sunset-view-of-beautiful-lakeside-resident",
+            "image" => "/assets/images/img5.jpg"
+        ],
+        [
+            "id" => 2,
+            "price_per_person" => 1230,
+            "location" => "Netherlands",
+            "rating" => 5,
+            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
+            "title" => "Experience the natural beauty of island",
+            "slug" => "experience-the-natural-beauty-of-island",
+            "image" => "/assets/images/img5.jpg"
+        ],
+        [
+            "id" => 3,
+            "price_per_person" => 2000,
+            "location" => "Portugal",
+            "rating" => 5,
+            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
+            "title" => "Vacation to the water city of Portugal",
+            "slug" => "vacation-to-the-water-city-of-portugal",
+            "image" => "/assets/images/img5.jpg"
+        ]
+    ];
+
+    return view('welcome', compact('popular_packages'));
 })->name('lang.switch');
 
 Route::get('/{locale?}/book-now', function ($locale = null) {

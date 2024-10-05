@@ -231,64 +231,71 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="package-inner">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="package-wrap">
-                                    <figure class="feature-image">
-                                        <a href="#">
-                                            <img src="assets/images/img5.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="package-price">
-                                        <h6>
-                                            <span>$1,900 </span> / per person
-                                        </h6>
-                                    </div>
-                                    <div class="package-content-wrap">
-                                        <div class="package-meta text-center">
-                                            <ul>
-                                                <li>
-                                                    <i class="far fa-clock"></i>
-                                                    7D/6N
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-user-friends"></i>
-                                                    People: 5
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-map-marker-alt"></i>
-                                                    Malaysia
-                                                </li>
-                                            </ul>
+                            @foreach ($popular_packages as $package)
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="package-wrap">
+                                        <figure class="feature-image">
+                                            <a href="#">
+                                                <img src="assets/images/img5.jpg" alt="">
+                                            </a>
+                                        </figure>
+                                        <div class="package-price">
+                                            <h6>
+                                                <span>${{ $package['price_per_person'] }} </span> / per person
+                                            </h6>
                                         </div>
-                                        <div class="package-content">
-                                            <h3>
-                                                <a href="#">Sunset view of beautiful lakeside resident</a>
-                                            </h3>
-                                            <div class="review-area">
-                                                <span class="review-text">(25 reviews)</span>
-                                                <div class="rating-start" title="Rated 5 out of 5">
-                                                    <span style="width: 60%"></span>
-                                                </div>
+                                        <div class="package-content-wrap">
+                                            <div class="package-meta text-center">
+                                                <ul>
+                                                    <li>
+                                                        <i class="far fa-clock"></i>
+                                                        7D/6N
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-user-friends"></i>
+                                                        People: 5
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-map-marker-alt"></i>
+                                                        {{ $package['location'] }}
+                                                    </li>
+                                                </ul>
                                             </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec
-                                                ullam.
-                                                Ut elit tellus, luctus nec ullam elit tellpus.
-                                            </p>
-                                            <div class="btn-wrap">
-                                                <a href="{{ app()->getLocale() }}/package"
-                                                    class="button-text width-6">Batafsil<i
-                                                        class="fas fa-arrow-right"></i></a>
-                                                <a href="#" class="button-text width-6">Wish List<i
-                                                        class="far fa-heart"></i></a>
+                                            <div class="package-content">
+                                                <h3>
+                                                    <a
+                                                        href="{{ app()->getLocale() }}/package/{{ $package['slug'] }}">{{ $package['title'] }}</a>
+                                                </h3>
+                                                <div class="review-area">
+                                                    {{-- <span class="review-text">(25 reviews)</span> --}}
+                                                    <div class="rating-start" title="Rated 5 out of 5">
+                                                        <span style="width: 60%"></span>
+                                                    </div>
+                                                </div>
+                                                <p>
+                                                    {{ $package['desc'] }}
+                                                </p>
+                                                <div class="btn-wrap">
+                                                    <a href="{{ app()->getLocale() }}/package/{{ $package['slug'] }}"
+                                                        class="button-text width-6">
+                                                        Batafsil
+                                                        <i class="fas fa-arrow-right"></i>
+                                                    </a>
+                                                    <a href="#" class="button-text width-6">
+                                                        Wish List
+                                                        <i class="far fa-heart"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
+                            @endforeach
+
+                            {{-- <div class="col-lg-4 col-md-6">
                                 <div class="package-wrap">
                                     <figure class="feature-image">
                                         <a href="#">
@@ -391,7 +398,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="btn-wrap text-center">
                             <a href="#" class="button-primary">VIEW ALL PACKAGES</a>
