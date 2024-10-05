@@ -30,5 +30,9 @@ Route::get('/{locale?}', function ($locale = null) {
 })->name('lang.switch');
 
 Route::get('/{locale?}/book-now', function ($locale = null) {
-   return view('book-now');
+    return view('book-now');
+});
+
+Route::get('/{locale?}/package', function ($locale = null) {
+    return view('package');
 });

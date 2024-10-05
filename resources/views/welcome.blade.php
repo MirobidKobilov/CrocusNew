@@ -133,8 +133,7 @@
                                     <div class="col-sm-6">
                                         <div class="desti-item overlay-desti-item">
                                             <figure class="desti-image">
-                                                <img style="height: 533px" src="/countries/dubai.jpeg"
-                                                    alt="">
+                                                <img style="height: 533px" src="/countries/dubai.jpeg" alt="">
                                             </figure>
                                             <div class="meta-cat bg-meta-cat">
                                                 <a href="#">DUBAI</a>
@@ -152,8 +151,7 @@
                                     <div class="col-sm-6">
                                         <div class="desti-item overlay-desti-item">
                                             <figure class="desti-image">
-                                                <img style="height: 533px" src="/countries/egypt.jpeg"
-                                                    alt="">
+                                                <img style="height: 533px" src="/countries/egypt.jpeg" alt="">
                                             </figure>
                                             <div class="meta-cat bg-meta-cat">
                                                 <a href="#">egypt</a>
@@ -274,11 +272,14 @@
                                                     <span style="width: 60%"></span>
                                                 </div>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam.
-                                                Ut elit tellus, luctus nec ullam elit tellpus.</p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec
+                                                ullam.
+                                                Ut elit tellus, luctus nec ullam elit tellpus.
+                                            </p>
                                             <div class="btn-wrap">
-                                                <a href="{{ app()->getLocale() }}/book-now"
-                                                    class="button-text width-6">Book Now<i
+                                                <a href="{{ app()->getLocale() }}/package"
+                                                    class="button-text width-6">Batafsil<i
                                                         class="fas fa-arrow-right"></i></a>
                                                 <a href="#" class="button-text width-6">Wish List<i
                                                         class="far fa-heart"></i></a>
@@ -329,8 +330,8 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam.
                                                 Ut elit tellus, luctus nec ullam elit tellpus.</p>
                                             <div class="btn-wrap">
-                                                <a href="{{ app()->getLocale() }}/book-now"
-                                                    class="button-text width-6">Book Now<i
+                                                <a href="{{ app()->getLocale() }}/package"
+                                                    class="button-text width-6">Batafsil<i
                                                         class="fas fa-arrow-right"></i></a>
                                                 <a href="#" class="button-text width-6">Wish List<i
                                                         class="far fa-heart"></i></a>
@@ -381,8 +382,8 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam.
                                                 Ut elit tellus, luctus nec ullam elit tellpus.</p>
                                             <div class="btn-wrap">
-                                                <a href="{{ app()->getLocale() }}/book-now"
-                                                    class="button-text width-6">Book Now<i
+                                                <a href="/{{ app()->getLocale() }}/package"
+                                                    class="button-text width-6">Batafsil<i
                                                         class="fas fa-arrow-right"></i></a>
                                                 <a href="#" class="button-text width-6">Wish List<i
                                                         class="far fa-heart"></i></a>

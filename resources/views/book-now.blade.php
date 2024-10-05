@@ -41,7 +41,7 @@
                 <div class="inner-baner-container" style="background-image: url(/assets/images/inner-banner.jpg);">
                     <div class="container">
                         <div class="inner-banner-content">
-                            <h1 class="inner-title">Booking</h1>
+                            <h1 class="inner-title">Bron qilish</h1>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                             <div class="booking-form-wrap">
                                 <div class="booking-content mb-4">
                                     <div class="form-title mb-0">
-                                        <h3>Your Details</h3>
+                                        <h3>Ma'lumotlar</h3>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 mb-2">
@@ -87,13 +87,13 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label>Full name*</label>
+                                                <label>To'liq ism*</label>
                                                 <input type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label>Phone*</label>
+                                                <label>Telefon*</label>
                                                 <input type="text" class="form-control">
                                             </div>
                                         </div>
@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group mb-0">
-                                                <label for="message">Message</label>
+                                                <label for="message">Habar</label>
                                                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
                                             </div>
                                         </div>
@@ -120,7 +120,9 @@
                                             I accept terms and conditions and general policy.
                                         </label>
                                     </div>
-                                    <a href="#" class="button-primary">Book Now</a>
+                                    <a href="https://payme.uz" target="_blank" class="button-primary">
+                                        To'lov qilish
+                                    </a>
                                 </div>
                             </div>
                             <!-- step one form html end -->
@@ -128,12 +130,12 @@
                         <div class="col-lg-4">
                             <aside class="sidebar">
                                 <div class="widget-bg widget-table-summary">
-                                    <h4 class="bg-title">Summary</h4>
+                                    <h4 class="bg-title">Narxlar</h4>
                                     <table>
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <strong>Packages cost </strong>
+                                                    <strong>Tour narxi </strong>
                                                 </td>
                                                 <td class="text-right">
                                                     $300
@@ -141,7 +143,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <strong>Dedicated tour guide</strong>
+                                                    <strong>Gid</strong>
                                                 </td>
                                                 <td class="text-right">
                                                     $34
@@ -149,7 +151,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <strong>Insurance</strong>
+                                                    <strong>Sug'urta</strong>
                                                 </td>
                                                 <td class="text-right">
                                                     $34
@@ -157,7 +159,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <strong>tax</strong>
+                                                    <strong>Soliq</strong>
                                                 </td>
                                                 <td class="text-right">
                                                     13%
@@ -165,7 +167,7 @@
                                             </tr>
                                             <tr class="total">
                                                 <td>
-                                                    <strong>Total cost</strong>
+                                                    <strong>Umumiy narx</strong>
                                                 </td>
                                                 <td class="text-right">
                                                     <strong>$368</strong>
@@ -179,9 +181,9 @@
                                         <i class="fas fa-phone-volume"></i>
                                     </div>
                                     <div class="support-content">
-                                        <h5>HELP AND SUPPORT</h5>
-                                        <a href="telto:12345678" class="phone">+11 234 889 00</a>
-                                        <small>Monday to Friday 9.00am - 7.30pm</small>
+                                        <h5>Qo'ng'iroq markazimiz</h5>
+                                        <a href="telto:12345678" class="phone">+998 88 851 18 04</a>
+                                        <small>Dushanbadan Jumagacha 9:00 - 18:00</small>
                                     </div>
                                 </div>
                             </aside>
