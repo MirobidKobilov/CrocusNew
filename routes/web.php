@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocalizationController;
 use GuzzleHttp\Psr7\Request;
@@ -96,6 +97,10 @@ Route::get('/{locale?}', function ($locale = null) {
 
 Route::get('/{locale?}/book-now', function ($locale = null) {
     return view('book-now');
+});
+
+Route::get('/test', function () {
+    dd('test');
 });
 
 Route::get('/{locale?}/package', function ($locale = null) {
