@@ -105,3 +105,5 @@ Route::get('/{locale?}/admin', [AdminController::class, 'index']);
 Route::get('/{locale?}/admin/packages', [PackagesController::class, 'index']);
 Route::get('/{locale?}/admin/add-package', [PackagesController::class, 'create']);
 Route::post('/{locale?}/admin/add-package', [PackagesController::class, 'store']);
+Route::get('/{locale?}/admin/edit-package/{id}', [PackagesController::class, 'edit']);
+Route::post('/{locale?}/admin/update-package/{id}', [PackagesController::class, 'update']);

@@ -14,7 +14,8 @@ class PackagesController extends Controller
      */
     public function index()
     {
-        return view('admin.packages');
+        $packages = Package::all();
+        return view('admin.packages.packages', compact('packages'));
     }
 
     /**
@@ -22,7 +23,7 @@ class PackagesController extends Controller
      */
     public function create()
     {
-        return view('admin.add-package');
+        return view('admin.packages.add-package');
     }
 
     /**
@@ -35,11 +36,14 @@ class PackagesController extends Controller
             'location' => 'required|string|max:255',
             'rating' => 'required|numeric|min:1|max:5',
             'description' => 'required|string',
+            'short_description' => 'required|string',
             'title' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096', // Adjust as needed
         ]);
 
-        // $validatedData['slug'] = Str::slug($validatedData['title'], '-');
+
+
+        $validatedData['slug'] = Str::slug($validatedData['title'], '-');
 
         // Handle image upload
         if ($request->hasFile('image')) {
@@ -52,7 +56,8 @@ class PackagesController extends Controller
         // Save data to the database
         Package::create($validatedData);
 
-        return response()->json(['message' => 'Data saved successfully'], 201);
+        // return response()->json(['message' => 'Data saved successfully'], 201);
+        return redirect('/ru/admin/packages')->with('success', 'New package created');
     }
 
     /**
@@ -66,17 +71,31 @@ class PackagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $lang, string $id)
     {
-        //
+        $package = Package::find($id);
+        return view('admin.packages.edit-package', compact('package'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $lang, string $id)
     {
-        //
+
+        $package = Package::find($id);
+        $validatedData = $request->validate([
+            'price_per_person' => 'required|numeric',
+            'location' => 'required|string|max:255',
+            'rating' => 'required|numeric|min:1|max:5',
+            'description' => 'required|string',
+            'short_description' => 'required|string',
+            'title' => 'required|string|max:255',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:4096', // Adjust as needed
+        ]);
+
+        $package->update($validatedData);
+        return redirect('/ru/admin/packages')->with('success', 'Package has been updated');
     }
 
     /**

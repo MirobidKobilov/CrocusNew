@@ -23,6 +23,7 @@ class Package extends Model
         "location",
         "rating",
         "description",
+        "short_description",
         "title",
         "slug",
         "image"
