@@ -22,7 +22,7 @@ class Package extends Model
         "price_per_person",
         "location",
         "rating",
-        "desc",
+        "description",
         "title",
         "slug",
         "image"
