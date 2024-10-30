@@ -231,7 +231,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="package-inner">
                         <div class="row">
                             @foreach ($popular_packages as $package)

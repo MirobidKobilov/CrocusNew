@@ -27,7 +27,7 @@
         rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="/style.css">
-    <title>Travele | Travel & Tour HTML5 template </title>
+    <title>Travle | {{ $package->title }}</title>
 </head>
 
 <body>
@@ -56,9 +56,9 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="single-tour-inner">
-                                <h2>EXPERIENCE THE NATURAL BEAUTY OF ISLAND</h2>
+                                <h2>{{ $package->title }}</h2>
                                 <figure class="feature-image">
-                                    <img src="/assets/images/img27.jpg" alt="">
+                                    <img src="/{{ $package->image }}" alt="">
                                     <div class="package-meta text-center">
                                         <ul>
                                             <li>
@@ -71,7 +71,7 @@
                                             </li>
                                             <li>
                                                 <i class="fas fa-map-marked-alt"></i>
-                                                Norway
+                                                {{ $package->location }}
                                             </li>
                                         </ul>
                                     </div>
@@ -100,26 +100,7 @@
                                         <div class="tab-pane fade show active" id="overview" role="tabpanel"
                                             aria-labelledby="overview-tab">
                                             <div class="overview-content">
-                                                <p>Occaecat pariatur! Quaerat ligula, ab, consequuntur orci mus
-                                                    ultricies praesent aute blandit beatae nisl aut, totam mauris
-                                                    rhoncus? Tellus netus fringilla class auctor dui. Dolores excepteur,
-                                                    doloribus, blanditiis aliquip nisl. Occaecat iusto? Provident sociis
-                                                    rerum. Amet, asperiores molestie varius eos! Libero, fermentum
-                                                    fermentum totam! Sunt praesentium, totam. Excepteur platea nisl.
-                                                    Convallis aliquam? Iaculis erat ipsa molestie, quod, vestibulum
-                                                    reiciendis, maxime nostra, integer unde officiis quo integer unde
-                                                    officiis quo.</p>
-                                                <p>Occaecat pariatur! Quaerat ligula, ab, consequuntur orci mus
-                                                    ultricies praesent aute blandit beatae nisl aut, totam mauris
-                                                    rhoncus? Tellus netus fringilla class auctor dui. Dolores excepteur,
-                                                    doloribus, blanditiis aliquip nisl..</p>
-                                                <ul>
-                                                    <li>- Travel cancellation insurance</li>
-                                                    <li>- Breakfast and dinner included</li>
-                                                    <li>- Health care included</li>
-                                                    <li>- Transfer to the airport and return to the agency</li>
-                                                    <li>- Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                                                </ul>
+                                                {{ $package->description }}
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="program" role="tabpanel"
@@ -346,7 +327,7 @@
                             <div class="sidebar">
                                 <div class="package-price">
                                     <h5 class="price">
-                                        <span>$649</span> / per person
+                                        <span>${{ $package->price_per_person }}</span> / per person
                                     </h5>
                                     <div class="start-wrap">
                                         <div class="rating-start" title="Rated 5 out of 5">

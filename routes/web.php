@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\PackagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocalizationController;
+use App\Models\Package;
 use GuzzleHttp\Psr7\Request;
 
 /*
@@ -18,38 +19,7 @@ use GuzzleHttp\Psr7\Request;
 */
 
 Route::get('/', function () {
-    $popular_packages = [
-        [
-            "id" => 1,
-            "price_per_person" => 1900,
-            "location" => "Turkey",
-            "rating" => 5,
-            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
-            "title" => "Sunset view of beautiful lakeside resident",
-            "slug" => "sunset-view-of-beautiful-lakeside-resident",
-            "image" => "/assets/images/img5.jpg"
-        ],
-        [
-            "id" => 2,
-            "price_per_person" => 1230,
-            "location" => "Netherlands",
-            "rating" => 5,
-            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
-            "title" => "Experience the natural beauty of island",
-            "slug" => "experience-the-natural-beauty-of-island",
-            "image" => "/assets/images/img5.jpg"
-        ],
-        [
-            "id" => 3,
-            "price_per_person" => 2000,
-            "location" => "Portugal",
-            "rating" => 5,
-            "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit luctus nec ullam. Ut elit tellus, luctus nec ullam elit tellpus.",
-            "title" => "Vacation to the water city of Portugal",
-            "slug" => "vacation-to-the-water-city-of-portugal",
-            "image" => "/assets/images/img5.jpg"
-        ]
-    ];
+    $popular_packages = Package::take(3)->get();
     return view('welcome', compact('popular_packages'));
 });
 
@@ -98,6 +68,11 @@ Route::get('/{locale?}', function ($locale = null) {
 
 Route::get('/{locale?}/book-now', function ($locale = null) {
     return view('book-now');
+});
+
+Route::get('/{locale?}/package/{package}', function ($locale = null, $package) {
+    $package = Package::where('slug', $package)->first();
+    return view('package', compact('package'));
 });
 
 

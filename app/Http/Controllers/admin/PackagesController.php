@@ -35,7 +35,7 @@ class PackagesController extends Controller
             'price_per_person' => 'required|numeric',
             'location' => 'required|string|max:255',
             'rating' => 'required|numeric|min:1|max:5',
-            'description' => 'required|string',
+            'description' => 'required|string|max:16777215',
             'short_description' => 'required|string',
             'title' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096', // Adjust as needed
